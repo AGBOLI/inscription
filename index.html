@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.ahognonelie@gmail.com/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("Email ou numéro : {{contact}}
+                    Date de naissance : {{naissance}}
+                   Genre : {{genre}}
+                   Avis : {{avis}}
+
+                    Nom du fichier : {{fichier_nom}}
+                    (Le fichier est encodé en base64 ici : {{fichier_base64}})
+                        "); // À remplacer
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Formulaire d’inscription</h1>
+  </header>
+
+  <section class="form-section">
+    <form id="inscriptionForm">
+      <label>Email ou numéro :</label>
+      <input type="text" name="contact" required />
+
+      <label>Date de naissance :</label>
+      <input type="date" name="naissance" required />
+
+      <label>Genre :</label>
+      <select name="genre" required>
+        <option value="">--Sélectionnez--</option>
+        <option value="Masculin">Masculin</option>
+        <option value="Féminin">Féminin</option>
+      </select>
+
+      <label>Carte d'identité (PDF uniquement) :</label>
+      <input type="file" id="fichier" accept=".pdf" required />
+
+      <label>Votre avis sur l'école :</label>
+      <textarea name="avis" rows="4" required></textarea>
+
+      <button type="submit">S’inscrire</button>
+    </form>
+    <p id="message"></p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
